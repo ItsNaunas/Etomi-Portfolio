@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+:root {
+  --font-playfair: var(--font-playfair);
+  --font-raleway: var(--font-raleway);
+}
+
+body {
+  background: #52131e;
+  color: #ffbd59;
+  font-family: var(--font-raleway), sans-serif;
+}
+
+/* Utility Classes */
+.heading-serif {
+  font-family: var(--font-playfair), serif;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.body-sans {
+  font-family: var(--font-raleway), sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.section-heading {
+  font-family: var(--font-playfair), serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: -0.025em;
+  color: #ffbd59;
+}
+
+.section-subtext {
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 1.125rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #ffbd59;
+  opacity: 0.9;
+}
+
+/* Theme variants for section headings */
+.section-heading.light {
+  color: #ffbd59;
+}
+
+.section-heading.dark {
+  color: #ffbd59;
+}
+
+.section-subtext.light {
+  color: #ffbd59;
+  opacity: 0.9;
+}
+
+.section-subtext.dark {
+  color: #ffbd59;
+  opacity: 0.9;
+}
