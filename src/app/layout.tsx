@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Raleway } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
@@ -34,6 +35,7 @@ export default function RootLayout({
         <NavBar />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
