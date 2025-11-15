@@ -5,19 +5,15 @@ import Lenis from "lenis";
 import { useEffect, useRef, useState } from "react";
 
 const images = [
-  "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=600&fit=crop&crop=center",
-  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=600&fit=crop&crop=center",
-  "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop&crop=center",
-  "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=600&fit=crop&crop=center",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&crop=center",
-  "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=600&fit=crop&crop=center",
-  "https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=400&h=600&fit=crop&crop=center",
-  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=600&fit=crop&crop=center",
-  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=600&fit=crop&crop=center",
-  "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=600&fit=crop&crop=center",
-  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=600&fit=crop&crop=center",
-  "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop&crop=center",
-  "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=600&fit=crop&crop=center",
+  "/images/portfolio/port4.jpeg",
+  "/images/portfolio/port1.jpeg",
+  "/images/portfolio/port7.jpeg",
+  "/images/portfolio/port2.jpeg",
+  "/images/portfolio/port5.jpeg",
+  "/images/portfolio/port8.jpeg",
+  "/images/portfolio/port3.jpeg",
+  "/images/portfolio/port6.jpeg",
+  "/images/portfolio/port9.jpeg",
 ];
 
 const Skiper30 = () => {
@@ -64,7 +60,10 @@ const Skiper30 = () => {
       <Column images={[images[0], images[1], images[2]]} y={y} />
       <Column images={[images[3], images[4], images[5]]} y={y2} />
       <Column images={[images[6], images[7], images[8]]} y={y3} />
-      <Column images={[images[6], images[7], images[8]]} y={y4} />
+      <Column
+        images={[images[2], images[4], images[0]]}
+        y={y4}
+      />
     </div>
   );
 };

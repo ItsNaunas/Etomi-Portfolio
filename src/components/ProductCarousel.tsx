@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import {
   Autoplay,
   EffectCoverflow,
@@ -21,58 +21,36 @@ import { cn } from "@/lib/utils";
 const ProductCarousel = () => {
   const products = [
     {
-      src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop&crop=center",
-      alt: "Personal Branding Masterclass",
-      title: "Personal Branding Masterclass",
-      price: "$99",
+      src: "/images/creative-services/modelling.jpeg",
+      alt: "Modelling & Editorial",
+      title: "Modelling & Editorial",
     },
     {
-      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center",
-      alt: "Social Media Template Pack",
-      title: "Social Media Template Pack",
-      price: "$29",
+      src: "/images/creative-services/acting.jpeg",
+      alt: "Acting & Performance",
+      title: "Acting & Performance",
     },
     {
-      src: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop&crop=center",
-      alt: "Brand Strategy Workbook",
-      title: "Brand Strategy Workbook",
-      price: "$49",
+      src: "/images/creative-services/branding.png",
+      alt: "Branding & Strategy",
+      title: "Branding & Strategy",
     },
     {
-      src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop&crop=center",
-      alt: "Content Creation Course",
-      title: "Content Creation Course",
-      price: "$149",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=center",
-      alt: "Creative Entrepreneur's Guide",
-      title: "Creative Entrepreneur's Guide",
-      price: "$19",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center",
-      alt: "Presentation Templates",
-      title: "Presentation Templates",
-      price: "$39",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=400&h=300&fit=crop&crop=center",
-      alt: "Photography Fundamentals",
-      title: "Photography Fundamentals",
-      price: "$79",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop&crop=center",
-      alt: "Business Growth Guide",
-      title: "Business Growth Guide",
-      price: "$59",
+      src: "/images/creative-services/architecture.jpeg",
+      alt: "Architecture & Design Thinking",
+      title: "Architecture & Design Thinking",
     },
   ];
 
   return (
     <div className="flex h-full w-full items-center justify-center overflow-hidden">
-      <Carousel_003 className="" images={products} showPagination loop />
+      <Carousel_003
+        className=""
+        images={products}
+        showPagination
+        showNavigation
+        loop
+      />
     </div>
   );
 };
@@ -88,7 +66,7 @@ const Carousel_003 = ({
   autoplay = false,
   spaceBetween = 0,
 }: {
-  images: { src: string; alt: string; title?: string; price?: string }[];
+  images: { src: string; alt: string; title?: string }[];
   className?: string;
   showPagination?: boolean;
   showNavigation?: boolean;
@@ -101,6 +79,38 @@ const Carousel_003 = ({
     width: 100%;
     height: 400px;
     padding-bottom: 50px !important;
+  }
+
+  .Carousal_003 .swiper-button-next,
+  .Carousal_003 .swiper-button-prev {
+    width: 48px;
+    height: 48px;
+    border-radius: 9999px;
+    background-color: #ffbd59;
+    color: #52131e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  }
+
+  .Carousal_003 .swiper-button-next:hover,
+  .Carousal_003 .swiper-button-prev:hover {
+    transform: translateY(-2px);
+  }
+
+  .Carousal_003 .swiper-pagination-bullet {
+    background-color: #ffbd59 !important;
+    opacity: 0.4;
+    width: 14px;
+    height: 4px;
+    border-radius: 9999px;
+    margin: 0 6px !important;
+  }
+
+  .Carousal_003 .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 32px;
   }
   
   .Carousal_003 .swiper-slide {
@@ -181,34 +191,69 @@ const Carousel_003 = ({
           modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
         >
           {images.map((image, index) => (
-            <SwiperSlide key={index} className="">
-              <div className="relative h-full w-full group">
-                <img
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  src={image.src}
-                  alt={image.alt}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="font-semibold text-lg mb-1">{image.title}</h3>
-                  <p className="text-2xl font-bold text-brand-accent">{image.price}</p>
-                </div>
-              </div>
+            <SwiperSlide key={index}>
+              <CarouselSlide {...image} />
             </SwiperSlide>
           ))}
           {showNavigation && (
             <div>
               <div className="swiper-button-next after:hidden">
-                <ChevronRightIcon className="h-6 w-6 text-white" />
+                <ChevronRightIcon className="h-6 w-6 text-brand-dark" />
               </div>
               <div className="swiper-button-prev after:hidden">
-                <ChevronLeftIcon className="h-6 w-6 text-white" />
+                <ChevronLeftIcon className="h-6 w-6 text-brand-dark" />
               </div>
             </div>
           )}
         </Swiper>
       </motion.div>
     </motion.div>
+  );
+};
+
+type CarouselSlideProps = {
+  src: string;
+  alt: string;
+  title?: string;
+};
+
+const CarouselSlide = ({ src, alt, title }: CarouselSlideProps) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  return (
+    <div className="relative h-full w-full group rounded-2xl overflow-hidden border border-border-card">
+      <div
+        className={cn(
+          "absolute inset-0 bg-brand-gold/20 animate-pulse transition-opacity duration-500",
+          isLoaded && !hasError ? "opacity-0" : "opacity-100"
+        )}
+      />
+      <img
+        className={cn(
+          "h-full w-full object-cover transition-transform duration-500 group-hover:scale-105",
+          isLoaded && !hasError ? "opacity-100" : "opacity-0"
+        )}
+        src={src}
+        alt={alt}
+        onLoad={() => setIsLoaded(true)}
+        onError={() => {
+          setHasError(true);
+          setIsLoaded(false);
+        }}
+      />
+      {hasError && (
+        <div className="absolute inset-0 flex items-center justify-center text-brand-dark font-semibold bg-brand-gold/40">
+          Image coming soon
+        </div>
+      )}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+      <div className="absolute bottom-4 left-4 right-4">
+        <span className="inline-flex px-4 py-2 rounded-full bg-brand-gold text-brand-dark font-semibold uppercase tracking-[0.2em] text-xs shadow-lg">
+          {title}
+        </span>
+      </div>
+    </div>
   );
 };
 

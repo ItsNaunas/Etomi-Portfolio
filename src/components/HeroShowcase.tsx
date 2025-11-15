@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function HeroShowcase() {
@@ -6,14 +7,35 @@ export default function HeroShowcase() {
       <div className="max-w-7xl mx-auto px-4 w-full">
         <div className="grid grid-cols-3 gap-4 relative">
           {/* Three portrait frame placeholders */}
-          <div className="bg-gray-300 aspect-[3/4] flex items-center justify-center">
-            <span className="text-gray-500 text-sm">Portrait 1</span>
+          <div className="bg-gray-300 aspect-[3/4] relative overflow-hidden">
+            <Image
+              src="/images/hero/hero1.jpeg"
+              alt="Portrait of Etomi James"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 33vw, 20vw"
+              priority
+            />
           </div>
-          <div className="bg-gray-300 aspect-[3/4] flex items-center justify-center">
-            <span className="text-gray-500 text-sm">Portrait 2</span>
+          <div className="bg-gray-300 aspect-[3/4] relative overflow-hidden">
+            <Image
+              src="/images/hero/hero2.jpeg"
+              alt="Editorial shot of Etomi James"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 33vw, 20vw"
+              priority
+            />
           </div>
-          <div className="bg-gray-300 aspect-[3/4] flex items-center justify-center relative">
-            <span className="text-gray-500 text-sm">Portrait 3</span>
+          <div className="bg-gray-300 aspect-[3/4] relative overflow-hidden">
+            <Image
+              src="/images/hero/hero3.jpeg"
+              alt="Fashion portrait of Etomi James"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 33vw, 20vw"
+              priority
+            />
             {/* CTA positioned at bottom right of Portrait 3 */}
             <div className="absolute -bottom-4 -right-4">
               <Link 

@@ -13,49 +13,40 @@ import { cn } from "@/lib/utils";
 const Skiper52 = () => {
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=600&fit=crop&crop=center",
-      alt: "Digital Product 1",
+      src: "/images/shop/etsy.jpeg",
+      alt: "Etsy Boutique",
       code: "# 01",
+      title: "Etsy Boutique",
     },
     {
-      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=600&fit=crop&crop=center",
-      alt: "Digital Product 2",
+      src: "/images/shop/amazon.jpg",
+      alt: "Amazon Books",
       code: "# 02",
+      title: "Amazon Books",
     },
     {
-      src: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop&crop=center",
-      alt: "Digital Product 3",
+      src: "/images/shop/ebook.png",
+      alt: "Digital E-Books",
       code: "# 03",
+      title: "Digital E-Books",
     },
     {
-      src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=600&fit=crop&crop=center",
-      alt: "Digital Product 4",
+      src: "/images/shop/pdf.png",
+      alt: "PDF Resources",
       code: "# 04",
+      title: "PDF Resources",
     },
     {
-      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&crop=center",
-      alt: "Digital Product 5",
+      src: "/images/shop/course.jpeg",
+      alt: "Online Courses",
       code: "# 05",
+      title: "Online Courses",
     },
     {
-      src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=600&fit=crop&crop=center",
-      alt: "Digital Product 6",
+      src: "/images/shop/exclusive.jpeg",
+      alt: "Exclusive Content",
       code: "# 06",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=400&h=600&fit=crop&crop=center",
-      alt: "Digital Product 7",
-      code: "# 07",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=600&fit=crop&crop=center",
-      alt: "Digital Product 8",
-      code: "# 08",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=600&fit=crop&crop=center",
-      alt: "Digital Product 9",
-      code: "# 09",
+      title: "Exclusive Content",
     },
   ];
 
@@ -72,10 +63,10 @@ const HoverExpand_001 = ({
   images,
   className,
 }: {
-  images: { src: string; alt: string; code: string }[];
+  images: { src: string; alt: string; code: string; title?: string }[];
   className?: string;
 }) => {
-  const [activeImage, setActiveImage] = useState<number | null>(1);
+  const [hoveredImage, setHoveredImage] = useState<number | null>(null);
 
   return (
     <motion.div
@@ -97,36 +88,46 @@ const HoverExpand_001 = ({
           {images.map((image, index) => (
             <Link href="/shop" key={index}>
               <motion.div
-                className="relative cursor-pointer overflow-hidden rounded-3xl"
+                className="relative cursor-pointer overflow-hidden rounded-3xl border border-border-card bg-brand-dark/30"
                 initial={{ width: "2.5rem", height: "20rem" }}
                 animate={{
-                  width: activeImage === index ? "24rem" : "5rem",
-                  height: activeImage === index ? "24rem" : "24rem",
+                  width: hoveredImage === index ? "24rem" : "5rem",
+                  height: "24rem",
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                onClick={() => setActiveImage(index)}
-                onHoverStart={() => setActiveImage(index)}
+                onMouseEnter={() => setHoveredImage(index)}
+                onMouseLeave={() => setHoveredImage(null)}
               >
               <AnimatePresence>
-                {activeImage === index && (
+                {hoveredImage === index ? (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="absolute h-full w-full bg-gradient-to-t from-black/40 to-transparent"
+                    className="absolute h-full w-full bg-gradient-to-t from-black/60 via-black/20 to-transparent"
+                  />
+                ) : (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="absolute h-full w-full bg-black/30"
                   />
                 )}
               </AnimatePresence>
               <AnimatePresence>
-                {activeImage === index && (
+                {hoveredImage === index && (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="absolute flex h-full w-full flex-col items-end justify-end p-4"
+                    className="absolute flex h-full w-full flex-col items-start justify-end p-4"
                   >
-                    <p className="text-left text-xs text-white/50">
+                    <p className="text-xs uppercase tracking-[0.3em] text-brand-gold">
                       {image.code}
+                    </p>
+                    <p className="heading-serif text-2xl font-semibold text-white">
+                      {image.title}
                     </p>
                   </motion.div>
                 )}
