@@ -3,6 +3,17 @@
 import Link from 'next/link';
 
 export default function NavBar() {
+  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const href = e.currentTarget.getAttribute('href');
+    if (href?.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
   return (
     <nav className="bg-brand-dark border-b border-brand-gold/30">
       <div className="max-w-7xl mx-auto px-4">
@@ -17,12 +28,6 @@ export default function NavBar() {
             <Link href="/" className="body-sans text-brand-gold/90 hover:text-brand-gold transition-colors">
               Home
             </Link>
-            <Link href="/about" className="body-sans text-brand-gold/90 hover:text-brand-gold transition-colors">
-              About
-            </Link>
-            <Link href="/about" className="body-sans text-brand-gold/90 hover:text-brand-gold transition-colors">
-              Biography
-            </Link>
             <Link href="/services" className="body-sans text-brand-gold/90 hover:text-brand-gold transition-colors">
               Services
             </Link>
@@ -35,7 +40,11 @@ export default function NavBar() {
             <Link href="/media" className="body-sans text-brand-gold/90 hover:text-brand-gold transition-colors">
               Media
             </Link>
-            <Link href="/contact" className="body-sans text-brand-gold/90 hover:text-brand-gold transition-colors">
+            <Link 
+              href="#contact" 
+              onClick={handleContactClick}
+              className="body-sans text-brand-gold/90 hover:text-brand-gold transition-colors"
+            >
               Contact
             </Link>
           </div>

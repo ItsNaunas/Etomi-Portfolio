@@ -10,7 +10,7 @@ export default function Shop() {
         <div className="max-w-6xl mx-auto px-4">
           <SectionHeader 
             title="Shop" 
-            subtitle="Courses, templates, journals, and resources to elevate your craft and brand."
+            subtitle="Templates, journals, and resources to elevate your craft and brand."
             theme="light"
           />
         </div>
@@ -21,7 +21,7 @@ export default function Shop() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-white mb-4">Featured Products</h2>
-            <p className="text-brand-light text-lg">Discover our most popular courses, templates, and resources</p>
+            <p className="text-brand-light text-lg">Discover our most popular templates and resources</p>
           </div>
           <ProductCarousel />
         </div>
@@ -50,7 +50,7 @@ export default function Shop() {
             <InfoCard
               icon="💻"
               heading="Digital E-Books"
-              body="Exclusive guides, workbooks, and templates for creative professionals and entrepreneurs. Instant download access to premium content and resources."
+              body="Guides, workbooks, and templates for creative professionals and entrepreneurs. Instant download access to premium content and resources."
               ctaLabel="Download Now"
               ctaHref="#"
             />
@@ -60,22 +60,6 @@ export default function Shop() {
               heading="PDF Resources"
               body="Quick-reference guides, checklists, and templates for brand development, content planning, and creative project management."
               ctaLabel="View Resources"
-              ctaHref="#"
-            />
-            
-            <InfoCard
-              icon="🎓"
-              heading="Online Courses"
-              body="Comprehensive video courses covering personal branding, creative strategy, and professional development. Self-paced learning with lifetime access."
-              ctaLabel="Enroll Now"
-              ctaHref="#"
-            />
-            
-            <InfoCard
-              icon="⭐"
-              heading="Exclusive Content"
-              body="Members-only content, early access to new resources, and premium templates. Join the creative community and get exclusive benefits."
-              ctaLabel="Join Now"
               ctaHref="#"
             />
           </div>

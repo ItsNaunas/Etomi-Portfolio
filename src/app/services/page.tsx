@@ -32,7 +32,7 @@ export default function Services() {
                 "Brand Ambassador Work"
               ]}
               ctaLabel="Work With Me →"
-              ctaHref="/contact"
+              ctaHref="/#contact"
             />
             
             <InfoCard
@@ -47,7 +47,7 @@ export default function Services() {
                 "Performance Analytics & Optimization"
               ]}
               ctaLabel="Work With Me →"
-              ctaHref="/contact"
+              ctaHref="/#contact"
             />
             
             <InfoCard
@@ -62,7 +62,7 @@ export default function Services() {
                 "Crisis Management & Reputation Building"
               ]}
               ctaLabel="Work With Me →"
-              ctaHref="/contact"
+              ctaHref="/#contact"
             />
             
             <InfoCard
@@ -77,7 +77,7 @@ export default function Services() {
                 "Strategic Advisory & Board Consulting"
               ]}
               ctaLabel="Work With Me →"
-              ctaHref="/contact"
+              ctaHref="/#contact"
             />
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function Services() {
         title="Serious about working together?"
         subtitle="Let's discuss your project, goals, and how we can create something that truly resonates with your audience and drives results."
         buttons={[
-          { label: "Start a Conversation", href: "/contact" }
+          { label: "Start a Conversation", href: "/#contact" }
         ]}
       />
     </main>

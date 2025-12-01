@@ -88,7 +88,7 @@ export default function Media() {
         title="Ready to Collaborate?"
         subtitle="Let's create compelling content together. From brand campaigns to thought leadership pieces, I bring authentic storytelling and strategic vision to every project."
         buttons={[
-          { label: "Start a Project", href: "/contact" },
+          { label: "Start a Project", href: "/#contact" },
           { label: "View Portfolio", href: "/portfolio" }
         ]}
       />

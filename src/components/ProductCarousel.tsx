@@ -21,24 +21,24 @@ import { cn } from "@/lib/utils";
 const ProductCarousel = () => {
   const products = [
     {
-      src: "/images/creative-services/modelling.jpeg",
-      alt: "Modelling & Editorial",
-      title: "Modelling & Editorial",
+      src: "/images/shop/etsy.jpeg",
+      alt: "Etsy Boutique",
+      title: "Etsy Boutique",
     },
     {
-      src: "/images/creative-services/acting.jpeg",
-      alt: "Acting & Performance",
-      title: "Acting & Performance",
+      src: "/images/shop/amazon.jpg",
+      alt: "Amazon Books",
+      title: "Amazon Books",
     },
     {
-      src: "/images/creative-services/branding.png",
-      alt: "Branding & Strategy",
-      title: "Branding & Strategy",
+      src: "/images/shop/ebook.png",
+      alt: "Digital E-Books",
+      title: "Digital E-Books",
     },
     {
-      src: "/images/creative-services/architecture.jpeg",
-      alt: "Architecture & Design Thinking",
-      title: "Architecture & Design Thinking",
+      src: "/images/shop/pdf.png",
+      alt: "PDF Resources",
+      title: "PDF Resources",
     },
   ];
 

@@ -36,18 +36,6 @@ const Skiper52 = () => {
       code: "# 04",
       title: "PDF Resources",
     },
-    {
-      src: "/images/shop/course.jpeg",
-      alt: "Online Courses",
-      code: "# 05",
-      title: "Online Courses",
-    },
-    {
-      src: "/images/shop/exclusive.jpeg",
-      alt: "Exclusive Content",
-      code: "# 06",
-      title: "Exclusive Content",
-    },
   ];
 
   return (

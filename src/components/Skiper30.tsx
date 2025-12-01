@@ -3,6 +3,7 @@
 import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import Lenis from "lenis";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 const images = [
   "/images/portfolio/port4.jpeg",
@@ -80,13 +81,17 @@ const Column = ({ images, y }: ColumnProps) => {
       style={{ y }}
     >
       {images.map((src, i) => (
-        <div key={i} className="relative h-full w-full overflow-hidden">
+        <Link
+          key={i}
+          href="/portfolio"
+          className="relative h-full w-full overflow-hidden group cursor-pointer"
+        >
           <img
             src={`${src}`}
             alt="portfolio image"
-            className="pointer-events-none object-cover"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
-        </div>
+        </Link>
       ))}
     </motion.div>
   );
