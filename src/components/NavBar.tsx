@@ -28,6 +28,9 @@ export default function NavBar() {
             <Link href="/" className="body-sans text-brand-gold/90 hover:text-brand-gold transition-colors">
               Home
             </Link>
+            <Link href="/about" className="body-sans text-brand-gold/90 hover:text-brand-gold transition-colors">
+              About
+            </Link>
             <Link href="/services" className="body-sans text-brand-gold/90 hover:text-brand-gold transition-colors">
               Services
             </Link>

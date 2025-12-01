@@ -15,8 +15,8 @@ export default function Footer() {
           </div>
           
           <div className="flex flex-wrap justify-center gap-6 text-text-invert">
-            <Link href="/#contact" className="hover:text-brand-gold transition-colors">
-              Contact
+            <Link href="/about" className="hover:text-brand-gold transition-colors">
+              About
             </Link>
             <Link href="/services" className="hover:text-brand-gold transition-colors">
               Services
@@ -29,6 +29,9 @@ export default function Footer() {
             </Link>
             <Link href="/media" className="hover:text-brand-gold transition-colors">
               Media
+            </Link>
+            <Link href="/#contact" className="hover:text-brand-gold transition-colors">
+              Contact
             </Link>
           </div>
           
